@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'bootstrap-4.1.0-dist/css/bootstrap.css' %}">
+</head>
+<body>
+    {% csrf_token %}
+    <form class="form-horizontal container" action="{% url 'modify' %} " method="post">
+
+
+        <div class="form-group">
+
+            <div class="col-sm-10">
+                <input class="form-control col-lg-5 " style="display: none" name="email" type="text" value="{{ forgeted_email }}" readonly>
+            </div>
+        </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">请输入新密码:</label>
+        <div class="col-sm-10">
+          <input type="password" name="password1" class="form-control col-lg-5" id="inputPassword3" placeholder="请输入不少于6位字符">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">请再次输入密码:</label>
+        <div class="col-sm-10">
+          <input type="password" name="password2" class="form-control col-lg-5" id="inputPassword3" placeholder="请输入不少于6位字符">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success">确认</button>
+            <button type="reset" class="btn btn-info" >重置</button>
+        </div>
+      </div>
+    </form>
+
+</body>
+<script>
+</script>
+</html>
